@@ -5,3 +5,8 @@ exports.add = name => {
     var sql = `insert into projects(id_pro, name) values('${idPro}', '${name}');`;
     return db.insert(sql);
 }
+
+exports.getName = idPro => {
+    var sql = `select name from projects where id_pro = '${idPro}';`;
+    return db.load(sql);
+}
